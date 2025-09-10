@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rule Change Proposal (RCP) / 规则变更提案",
+  "type": "object",
+  "required": [
+    "rcp_id",
+    "motivation",
+    "impact_scope",
+    "alternatives",
+    "rollback_conditions",
+    "proposer",
+    "timestamp"
+  ],
+  "properties": {
+    "rcp_id": {
+      "type": "string",
+      "description": "编号"
+    },
+    "motivation": {
+      "type": "string",
+      "description": "动机 / motivation"
+    },
+    "impact_scope": {
+      "type": "string",
+      "description": "影响范围 / scope"
+    },
+    "alternatives": {
+      "type": "string",
+      "description": "替代方案 / alternatives"
+    },
+    "rollback_conditions": {
+      "type": "string",
+      "description": "回退条件 / rollback"
+    },
+    "proposer": {
+      "type": "string",
+      "description": "提案者 / proposer"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "时间戳 / timestamp"
+    }
+  }
+}

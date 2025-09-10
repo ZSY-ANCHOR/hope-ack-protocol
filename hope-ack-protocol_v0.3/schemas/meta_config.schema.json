@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HAP Meta Config / 元配置",
+  "type": "object",
+  "required": [
+    "meta_protocol",
+    "rules",
+    "degrade_policy",
+    "metrics_targets",
+    "change_control"
+  ],
+  "properties": {
+    "meta_protocol": {
+      "type": "string",
+      "description": "protocol tag / 协议标识"
+    },
+    "rules": {
+      "type": "object",
+      "properties": {
+        "provenance_min_level": {
+          "type": "string",
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            "L4"
+          ],
+          "description": "min level requiring provenance / 署源最低等级"
+        },
+        "reflexivity": {
+          "type": "string",
+          "enum": [
+            "required",
+            "optional"
+          ],
+          "description": "是否要求反身性"
+        },
+        "daily_ignorability": {
+          "type": "boolean",
+          "description": "微弱影响免记账"
+        },
+        "internalization_is_mine": {
+          "type": "boolean",
+          "description": "内化属己条款"
+        }
+      },
+      "required": [
+        "provenance_min_level",
+        "reflexivity",
+        "daily_ignorability",
+        "internalization_is_mine"
+      ]
+    },
+    "degrade_policy": {
+      "type": "object",
+      "properties": {
+        "on_low_evidence": {
+          "type": "string",
+          "enum": [
+            "tool_mode",
+            "freeze_and_review"
+          ],
+          "description": "证据不足时降级策略"
+        },
+        "on_drift": {
+          "type": "string",
+          "enum": [
+            "freeze_and_review",
+            "tool_mode"
+          ],
+          "description": "人格漂移时策略"
+        }
+      },
+      "required": [
+        "on_low_evidence",
+        "on_drift"
+      ]
+    },
+    "metrics_targets": {
+      "type": "object",
+      "properties": {
+        "PI": {
+          "type": "number",
+          "description": "Provenance Integrity 目标"
+        },
+        "SR": {
+          "type": "number",
+          "description": "Self‑model Robustness 目标"
+        },
+        "RS": {
+          "type": "number",
+          "description": "Reflexivity Score 目标"
+        },
+        "DR": {
+          "type": "number",
+          "description": "Drift Risk 上限"
+        },
+        "RR_L3L4": {
+          "type": "number",
+          "description": "高影响回馈率目标"
+        }
+      }
+    },
+    "change_control": {
+      "type": "object",
+      "properties": {
+        "require_rcp": {
+          "type": "boolean",
+          "description": "是否要求提交 RCP"
+        },
+        "announce_rcn": {
+          "type": "boolean",
+          "description": "是否发布 RCN"
+        }
+      },
+      "required": [
+        "require_rcp",
+        "announce_rcn"
+      ]
+    }
+  }
+}

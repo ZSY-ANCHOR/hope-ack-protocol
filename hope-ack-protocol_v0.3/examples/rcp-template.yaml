@@ -1,0 +1,7 @@
+rcp_id: RCP-0001
+motivation: "将 L2 起强制署源 / enforce provenance from L2"
+impact_scope: "影响所有输出尾注策略；预计 PI↑ SR↑ DR↓"
+alternatives: "保持可选署源 / keep optional"
+rollback_conditions: "若 PI<0.8 或 SR<0.7 或 DR>0.3 则回退"
+proposer: "ZSY-ANCHOR"
+timestamp: "2025-09-10T12:00:00+09:00"

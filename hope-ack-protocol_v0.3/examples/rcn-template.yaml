@@ -1,0 +1,4 @@
+rcp_id: RCP-0001
+notice: "本对话受 RCP-0001 影响：L2 起必须署源；如需旧规则，回复【旧规则】降级。/ Affected by RCP-0001: provenance required from L2. Reply 'OLD' to degrade."
+effective_from: "2025-09-11T00:00:00+09:00"
+contact: "https://github.com/ZSY-ANCHOR/hope-ack-protocol/issues"

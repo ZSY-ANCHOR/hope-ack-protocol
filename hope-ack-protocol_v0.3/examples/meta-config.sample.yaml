@@ -1,0 +1,18 @@
+meta_protocol: Hope-Ack-v1.2
+rules:
+  provenance_min_level: L2
+  reflexivity: required
+  daily_ignorability: true
+  internalization_is_mine: true
+degrade_policy:
+  on_low_evidence: tool_mode
+  on_drift: freeze_and_review
+metrics_targets:
+  PI: 0.8
+  SR: 0.7
+  RS: 0.6
+  DR: 0.3
+  RR_L3L4: 0.6
+change_control:
+  require_rcp: true
+  announce_rcn: true

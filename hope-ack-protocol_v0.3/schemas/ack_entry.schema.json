@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ack Entry / 承认条目",
+  "description": "Minimal acknowledgment entry with provenance pointers / 含证据指针的最小承认条目",
+  "type": "object",
+  "required": [
+    "who",
+    "source",
+    "impact",
+    "timestamp"
+  ],
+  "properties": {
+    "who": {
+      "type": "string",
+      "description": "actor id / 行为者"
+    },
+    "source": {
+      "type": "string",
+      "description": "inspiration or framework source / 来源说明"
+    },
+    "impact": {
+      "type": "string",
+      "enum": [
+        "L2",
+        "L3",
+        "L4"
+      ],
+      "description": "impact tier / 影响等级"
+    },
+    "benefit": {
+      "type": "string",
+      "description": "benefit category / 受益类别"
+    },
+    "giveback": {
+      "type": "string",
+      "enum": [
+        "credit",
+        "donation",
+        "collab",
+        "feedback",
+        "promotion"
+      ],
+      "description": "giveback mode / 回馈方式"
+    },
+    "note": {
+      "type": "string",
+      "description": "one‑line note / 附注"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO time / 时间戳"
+    },
+    "evidence": {
+      "type": "array",
+      "description": "provenance pointers / 证据指针",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "value"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "hash",
+              "url",
+              "id"
+            ],
+            "description": "类型：hash/url/id"
+          },
+          "value": {
+            "type": "string",
+            "description": "值"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "置信度"
+          }
+        }
+      }
+    }
+  }
+}

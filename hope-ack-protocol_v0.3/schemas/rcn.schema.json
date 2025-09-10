@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reflexive Change Notice (RCN) / 反身性变更公告",
+  "type": "object",
+  "required": [
+    "rcp_id",
+    "notice",
+    "effective_from",
+    "contact"
+  ],
+  "properties": {
+    "rcp_id": {
+      "type": "string",
+      "description": "对应 RCP 编号"
+    },
+    "notice": {
+      "type": "string",
+      "description": "一句话公告 / one‑liner notice"
+    },
+    "effective_from": {
+      "type": "string",
+      "format": "date-time",
+      "description": "生效时间"
+    },
+    "contact": {
+      "type": "string",
+      "description": "联系人/渠道"
+    }
+  }
+}
